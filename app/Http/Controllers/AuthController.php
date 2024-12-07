@@ -18,21 +18,21 @@ class AuthController extends Controller
         // Validate the input
         $request->validate(
             [
-                'username' => 'required',
-                'password' => ['required', 'min:3', 'regex:/[A-Z]/'],
+                'email' => ['required', 'email'],
+                'password' => 'required',
             ]
         );
 
         // Store the request data
-        $pagedata['username'] = $request->username; // Changed 'username' to 'name'
+        $pagedata['email'] = $request->email; // Changed 'username' to 'name'
         $pagedata['password'] = $request->password;
 
         // Check if the credentials match
         if (
-            $request->username == 'A2357301085' &&
+            $request->email == 'A2357301085' &&
             $request->password == 'A2357301085'
         ) {
-            return redirect()->route('home')->with('success', 'Login berhasil');
+            return redirect()->route('dashboard')->with('success', 'Login berhasil');
         } else {
             // Clear session data
             Session::flush();
