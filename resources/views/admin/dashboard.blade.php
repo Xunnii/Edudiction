@@ -37,7 +37,7 @@
                             <span class="hide-menu">Home</span>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link sidebar-link primary-hover-bg" href="{{route('dashboard')}}"
+                            <a class="sidebar-link sidebar-link primary-hover-bg" href="{{ route('dashboard') }}"
                                 aria-expanded="false">
                                 <span class="aside-icon p-2 bg-light-primary rounded-1">
                                     <i class="ti ti-layout-dashboard fs-7"></i>
@@ -54,7 +54,7 @@
                             <span class="hide-menu">DATA</span>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link sidebar-link primary-hover-bg" href="{{route('user.list')}}"
+                            <a class="sidebar-link sidebar-link primary-hover-bg" href="{{ route('user.list') }}"
                                 aria-expanded="false">
                                 <span class="aside-icon p-2 bg-light-primary rounded-1">
                                     <i class="ti ti-article fs-7"></i>
@@ -63,7 +63,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link sidebar-link primary-hover-bg" href="{{route('user.list')}}"
+                            <a class="sidebar-link sidebar-link primary-hover-bg" href="{{ route('user.list') }}"
                                 aria-expanded="false">
                                 <span class="aside-icon p-2 bg-light-primary rounded-1">
                                     <i class="ti ti-article fs-7"></i>
@@ -105,8 +105,8 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2"
                                         data-bs-toggle="dropdown" aria-expanded="false">
-                                        <img src="{{ asset('assets-admin/images/profile/user1.jpg') }}"
-                                            alt="" width="35" height="35" class="rounded-circle">
+                                        <img src="{{ asset('assets-admin/images/profile/user1.jpg') }}" alt=""
+                                            width="35" height="35" class="rounded-circle">
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
                                         aria-labelledby="drop2">
@@ -140,11 +140,10 @@
                 <div class="row">
                     <div class="col-lg-8 d-flex align-items-stretch">
                         <div class="card w-100">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center justify-content-between mb-10">
-                                    <div class="">
-                                        <h5 class="card-title fw-semibold">Profit & Expenses</h5>
-                                    </div>
+                            <div class="card-body p-4">
+                                <div class="d-flex mb-4 justify-content-between align-items-center">
+                                    <h5 class="mb-0 fw-bold">Top Paying Clients</h5>
+
                                     <div class="dropdown">
                                         <button id="dropdownMenuButton1" data-bs-toggle="dropdown"
                                             aria-expanded="false"
@@ -163,7 +162,138 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div id="profit"></div>
+
+                                <div class="table-responsive" data-simplebar>
+                                    <table class="table table-borderless align-middle text-nowrap">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Profile</th>
+                                                <th scope="col">Hour Rate</th>
+                                                <th scope="col">Extra classes</th>
+                                                <th scope="col">Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="me-4">
+                                                            <img src="{{ asset('assets-admin/images/profile/user1.jpg') }}"
+                                                                width="50" class="rounded-circle"
+                                                                alt="" />
+                                                        </div>
+
+                                                        <div>
+                                                            <h6 class="mb-1 fw-bolder">Mark J. Freeman</h6>
+                                                            <p class="fs-3 mb-0">Prof. English</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <p class="fs-3 fw-normal mb-0">$150/hour</p>
+                                                </td>
+                                                <td>
+                                                    <p class="fs-3 fw-normal mb-0 text-success">
+                                                        +53
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <span
+                                                        class="badge bg-light-success rounded-pill text-success px-3 py-2 fs-3">Available</span>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="me-4">
+                                                            <img src="{{ asset('assets-admin/images/profile/user2.jpg') }}"
+                                                                width="50" class="rounded-circle"
+                                                                alt="" />
+                                                        </div>
+
+                                                        <div>
+                                                            <h6 class="mb-1 fw-bolder">Nina R. Oldman</h6>
+                                                            <p class="fs-3 mb-0">Prof. History</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <p class="fs-3 fw-normal mb-0">$150/hour</p>
+                                                </td>
+                                                <td>
+                                                    <p class="fs-3 fw-normal mb-0 text-success">
+                                                        +68
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <span
+                                                        class="badge bg-light-primary rounded-pill text-primary px-3 py-2 fs-3">In
+                                                        Class</span>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="me-4">
+                                                            <img src="{{ asset('assets-admin/images/profile/user3.jpg') }}"
+                                                                width="50" class="rounded-circle"
+                                                                alt="" />
+                                                        </div>
+
+                                                        <div>
+                                                            <h6 class="mb-1 fw-bolder">UDIN</h6>
+                                                            <p class="fs-3 mb-0">GAMERS</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <p class="fs-3 fw-normal mb-0">$150/hour</p>
+                                                </td>
+                                                <td>
+                                                    <p class="fs-3 fw-normal mb-0 text-success">
+                                                        +94
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <span
+                                                        class="badge bg-light-danger rounded-pill text-danger px-3 py-2 fs-3">Absent</span>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="me-4">
+                                                            <img src="{{ asset('assets-admin/images/profile/user4.jpg') }}"
+                                                                width="50" class="rounded-circle"
+                                                                alt="" />
+                                                        </div>
+
+                                                        <div>
+                                                            <h6 class="mb-1 fw-bolder">June R. Smith</h6>
+                                                            <p class="fs-3 mb-0">Prof. Arts</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <p class="fs-3 fw-normal mb-0">$150/hour</p>
+                                                </td>
+                                                <td>
+                                                    <p class="fs-3 fw-normal mb-0 text-success">
+                                                        +27
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <span
+                                                        class="badge bg-light-warning rounded-pill text-warning px-3 py-2 fs-3">On
+                                                        Leave</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -317,306 +447,11 @@
                     </div>
                     <div class="col-lg-8 d-flex align-items-stretch">
                         <div class="card w-100">
-                            <div class="card-body p-4">
-                                <div class="d-flex mb-4 justify-content-between align-items-center">
-                                    <h5 class="mb-0 fw-bold">Top Paying Clients</h5>
 
-                                    <div class="dropdown">
-                                        <button id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                            aria-expanded="false"
-                                            class="rounded-circle btn-transparent rounded-circle btn-sm px-1 btn shadow-none">
-                                            <i class="ti ti-dots-vertical fs-7 d-block"></i>
-                                        </button>
-                                        <ul class="dropdown-menu dropdown-menu-end"
-                                            aria-labelledby="dropdownMenuButton1">
-                                            <li><a class="dropdown-item" href="#">Action</a></li>
-                                            <li>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="table-responsive" data-simplebar>
-                                    <table class="table table-borderless align-middle text-nowrap">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Profile</th>
-                                                <th scope="col">Hour Rate</th>
-                                                <th scope="col">Extra classes</th>
-                                                <th scope="col">Status</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="me-4">
-                                                            <img src="{{ asset('assets-admin/images/profile/user1.jpg') }}"
-                                                                width="50" class="rounded-circle"
-                                                                alt="" />
-                                                        </div>
-
-                                                        <div>
-                                                            <h6 class="mb-1 fw-bolder">Mark J. Freeman</h6>
-                                                            <p class="fs-3 mb-0">Prof. English</p>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <p class="fs-3 fw-normal mb-0">$150/hour</p>
-                                                </td>
-                                                <td>
-                                                    <p class="fs-3 fw-normal mb-0 text-success">
-                                                        +53
-                                                    </p>
-                                                </td>
-                                                <td>
-                                                    <span
-                                                        class="badge bg-light-success rounded-pill text-success px-3 py-2 fs-3">Available</span>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="me-4">
-                                                            <img src="{{ asset('assets-admin/images/profile/user2.jpg') }}"
-                                                                width="50" class="rounded-circle"
-                                                                alt="" />
-                                                        </div>
-
-                                                        <div>
-                                                            <h6 class="mb-1 fw-bolder">Nina R. Oldman</h6>
-                                                            <p class="fs-3 mb-0">Prof. History</p>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <p class="fs-3 fw-normal mb-0">$150/hour</p>
-                                                </td>
-                                                <td>
-                                                    <p class="fs-3 fw-normal mb-0 text-success">
-                                                        +68
-                                                    </p>
-                                                </td>
-                                                <td>
-                                                    <span
-                                                        class="badge bg-light-primary rounded-pill text-primary px-3 py-2 fs-3">In
-                                                        Class</span>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="me- 4">
-                                                            <img src="{{ asset('assets-admin/images/profile/user3.jpg') }}"
-                                                                width="50" class="rounded-circle"
-                                                                alt="" />
-                                                        </div>
-
-                                                        <div>
-                                                            <h6 class="mb-1 fw-bolder">Arya H. Shah</h6>
-                                                            <p class="fs-3 mb-0">Prof. Maths</p>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <p class="fs-3 fw-normal mb-0">$150/hour</p>
-                                                </td>
-                                                <td>
-                                                    <p class="fs-3 fw-normal mb-0 text-success">
-                                                        +94
-                                                    </p>
-                                                </td>
-                                                <td>
-                                                    <span
-                                                        class="badge bg-light-danger rounded-pill text-danger px-3 py-2 fs-3">Absent</span>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="me-4">
-                                                            <img src="{{ asset('assets-admin/images/profile/user4.jpg') }}"
-                                                                width="50" class="rounded-circle"
-                                                                alt="" />
-                                                        </div>
-
-                                                        <div>
-                                                            <h6 class="mb-1 fw-bolder">June R. Smith</h6>
-                                                            <p class="fs-3 mb-0">Prof. Arts</p>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <p class="fs-3 fw-normal mb-0">$150/hour</p>
-                                                </td>
-                                                <td>
-                                                    <p class="fs-3 fw-normal mb-0 text-success">
-                                                        +27
-                                                    </p>
-                                                </td>
-                                                <td>
-                                                    <span
-                                                        class="badge bg-light-warning rounded-pill text-warning px-3 py-2 fs-3">On
-                                                        Leave</span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="card overflow-hidden">
-                            <div class="position-relative">
-                                <a href="javascript:void(0)"><img
-                                        src="{{ asset('assets-admin/images/products/s4.jpg') }}"
-                                        class="card-img-top rounded-0" alt="..."></a>
-                                <a href="javascript:void(0)"
-                                    class="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3"
-                                    data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add To Cart"><i
-                                        class="ti ti-basket fs-4"></i></a>
-                            </div>
-                            <div class="card-body pt-3 p-4">
-                                <h6 class="fw-semibold fs-4">Boat Headphone</h6>
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <h6 class="fw-semibold fs-4 mb-0">$50 <span
-                                            class="ms-2 fw-normal text-muted fs-3"><del>$65</del></span></h6>
-                                    <ul class="list-unstyled d-flex align-items-center mb-0">
-                                        <li><a class="me-1" href="javascript:void(0)"><i
-                                                    class="ti ti-star-filled text-warning"></i></a>
-                                        </li>
-                                        <li><a class="me-1" href="javascript:void(0)"><i
-                                                    class="ti ti-star-filled text-warning"></i></a>
-                                        </li>
-                                        <li><a class="me-1" href="javascript:void(0)"><i
-                                                    class="ti ti-star-filled text-warning"></i></a>
-                                        </li>
-                                        <li><a class="me-1" href="javascript:void(0)"><i
-                                                    class="ti ti-star text-warning"></i></a></li>
-                                        <li><a class="" href="javascript:void(0)"><i
-                                                    class="ti ti-star text-warning"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="card overflow-hidden">
-                            <div class="position-relative">
-                                <a href="javascript:void(0)"><img
-                                        src="{{ asset('assets-admin/images/products/s5.jpg') }}"
-                                        class="card-img-top rounded-0" alt="..."></a>
-                                <a href="javascript:void(0)"
-                                    class="bg-primary rounded-circle p- 2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3"
-                                    data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add To Cart"><i
-                                        class="ti ti-basket fs-4"></i></a>
-                            </div>
-                            <div class="card-body pt-3 p-4">
-                                <h6 class="fw-semibold fs-4">MacBook Air Pro</h6>
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <h6 class="fw-semibold fs-4 mb-0">$650 <span
-                                            class="ms-2 fw-normal text-muted fs-3"><del>$900</del></span></h6>
-                                    <ul class="list-unstyled d-flex align-items-center mb-0">
-                                        <li><a class="me-1" href="javascript:void(0)"><i
-                                                    class="ti ti-star-filled text-warning"></i></a>
-                                        </li>
-                                        <li><a class="me-1" href="javascript:void(0)"><i
-                                                    class="ti ti-star-filled text-warning"></i></a>
-                                        </li>
-                                        <li><a class="me-1" href="javascript:void(0)"><i
-                                                    class="ti ti-star-filled text-warning"></i></a>
-                                        </li>
-                                        <li><a class="me-1" href="javascript:void(0)"><i
-                                                    class="ti ti-star text-warning"></i></a></li>
-                                        <li><a class="" href="javascript:void(0)"><i
-                                                    class="ti ti-star text-warning"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="card overflow-hidden">
-                            <div class="position-relative">
-                                <a href="javascript:void(0)"><img
-                                        src="{{ asset('assets-admin/images/products/s7.jpg') }}"
-                                        class="card-img-top rounded-0" alt="..."></a>
-                                <a href="javascript:void(0)"
-                                    class="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3"
-                                    data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add To Cart"><i
-                                        class="ti ti-basket fs-4"></i></a>
-                            </div>
-                            <div class="card-body pt-3 p-4">
-                                <h6 class="fw-semibold fs-4">Red Velvet Dress</h6>
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <h6 class="fw-semibold fs-4 mb-0">$150 <span
-                                            class="ms-2 fw-normal text-muted fs-3"><del>$200</del></span></h6>
-                                    <ul class="list-unstyled d-flex align-items-center mb-0">
-                                        <li><a class="me-1" href="javascript:void(0)"><i
-                                                    class="ti ti-star-filled text-warning"></i></a>
-                                        </li>
-                                        <li><a class="me-1" href="javascript:void(0)"><i
-                                                    class="ti ti-star-filled text-warning"></i></a>
-                                        </li>
-                                        <li><a class="me-1" href="javascript:void(0)"><i
-                                                    class="ti ti-star-filled text-warning"></i></a>
-                                        </li>
-                                        <li><a class="me-1" href="javascript:void(0)"><i
-                                                    class="ti ti-star text-warning"></i></a></li>
-                                        <li><a class="" href="javascript:void(0)"><i
-                                                    class="ti ti-star text-warning"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="card overflow-hidden">
-                            <div class="position-relative">
-                                <a href="javascript:void(0)"><img
-                                        src="{{ asset('assets-admin/images/products/s11.jpg') }}"
-                                        class="card-img-top rounded-0" alt="..."></a>
-                                <a href="javascript:void(0)"
-                                    class="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3"
-                                    data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add To Cart"><i
-                                        class="ti ti-basket fs-4"></i></a>
-                            </div>
-                            <div class="card-body pt-3 p 4">
-                                <h6 class="fw-semibold fs-4">Cute Soft Teddybear</h6>
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <h6 class="fw-semibold fs-4 mb-0">$285 <span
-                                            class="ms-2 fw-normal text-muted fs-3"><del>$345</del></span></h6>
-                                    <ul class="list-unstyled d-flex align-items-center mb-0">
-                                        <li><a class="me-1" href="javascript:void(0)"><i
-                                                    class="ti ti-star-filled text-warning"></i></a>
-                                        </li>
-                                        <li><a class="me-1" href="javascript:void(0)"><i
-                                                    class="ti ti-star-filled text-warning"></i></a>
-                                        </li>
-                                        <li><a class="me-1" href="javascript:void(0)"><i
-                                                    class="ti ti-star-filled text-warning"></i></a>
-                                        </li>
-                                        <li><a class="me-1" href="javascript:void(0)"><i
-                                                    class="ti ti-star text-warning"></i></a></li>
-                                        <li><a class="" href="javascript:void(0)"><i
-                                                    class="ti ti-star text-warning"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
                 <div class="py-6 px-6 text-center">
                     <p class="mb-0 fs-4">Design and Developed by <a href="https://www.wrappixel.com/" target="_blank"
                             class="pe-1 text-primary text-decoration-underline">wrappixel.com</a></p>

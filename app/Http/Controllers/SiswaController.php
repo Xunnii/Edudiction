@@ -57,14 +57,16 @@ class SiswaController extends Controller
 
     public function edit(string $param1)
     {
-        $data['dataSiswa'] = Siswa::findOrFail($param1);
-        return view('admin.siswa.edit', $data);
+        $pagedata['dataSiswa'] = Siswa::findOrFail($param1);
+        return view('admin.siswa.edit', $pagedata);
     }
 
 
     public function update(Request $request)
     {
+        dd($request->all());
         $request->validate([
+            'siswa_id' => ['required'],
             'name' => ['required'],
             'phone' => ['required', 'numeric'],
             'alamat' => ['required'],
@@ -75,8 +77,8 @@ class SiswaController extends Controller
             'tanggal' => ['required', 'date'],
             'pukul' => ['required', 'date_format:H:i'],
         ]);
-        $id = $request->id;
-        $user = Siswa::findOrFail($id);
+        $siswa_id = $request->siswa_id;
+        $siswa = Siswa::findOrFail($siswa_id);
 
         $siswa['name'] = $request->name;
         $siswa['phone'] = $request->phone;
@@ -86,7 +88,7 @@ class SiswaController extends Controller
         $siswa['tanggal'] = $request->tanggal;
         $siswa['pukul'] = $request->pukul;
 
-        $user->save();
+        $siswa->save();
 
         return redirect()->route('siswa.list')->with('success', 'Perubahan Data Berhasil!');
     }

@@ -1,6 +1,6 @@
 @extends('layouts.admin.app')
 
-@section('title', 'Sample Page')
+@section('title', 'User Dashboard')
 
 @section('content')
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
@@ -57,7 +57,7 @@
                         @endphp
                         @foreach ($dataUser as $row)
                             <tr>
-                                <td>{{ ($dataUser->currentPage() - 1) * $dataUser->perPage() + $loop->iteration }}</td>
+                                <td>{{ ++$no }}</td>
                                 <td>{{ $row->name }}</td>
                                 <td>{{ $row->email }}</td>
                                 <td>{{ $row->password }}</td>
@@ -84,7 +84,7 @@
                 </table>
             </div>
             <div class="mt-3">
-                {{$dataUser->links('pagination::simple-bootstrap-5')}}
+                {{ $dataUser->links('pagination::simple-bootstrap-5') }}
             </div>
         </div>
     </div>

@@ -25,7 +25,7 @@ class UserController extends Controller
     {
         $request->validate([
             'name' => ['required'],
-            'email' => ['required','email'],
+            'email' => ['required', 'email'],
             'password' => ['required'],
             'role' => ['required'],
         ]);
@@ -40,7 +40,6 @@ class UserController extends Controller
         User::create($data);
 
         return redirect()->route('user.list')->with('success', 'Penambahan Data Berhasil!');
-
     }
 
     /**
@@ -59,10 +58,12 @@ class UserController extends Controller
 
     public function update(Request $request)
     {
+        dd($request->all());
         $request->validate([
-            'name' => ['required'],
-            'email' => ['required','email'],
-            'password' => ['required'],
+            'id'        => ['required'],
+            'name'      => ['required'],
+            'email'     => ['required', 'email'],
+            'password'  => ['required'],
             'role' => ['required'],
 
         ]);
@@ -72,7 +73,6 @@ class UserController extends Controller
 
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = $request->password;
         $user->role = $request->role;
 
         $user->save();
@@ -86,7 +86,6 @@ class UserController extends Controller
 
         $user->delete();
 
-        return redirect()->route('user.list')->with('success','Penghapusan Data Berhasil!');
-
+        return redirect()->route('user.list')->with('success', 'Penghapusan Data Berhasil!');
     }
 }

@@ -1,6 +1,6 @@
 @extends('layouts.admin.app')
 
-@section('title', 'Sample Page')
+@section('title', 'User Edit')
 
 @section('content')
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
@@ -18,36 +18,37 @@
                         </a>
                     </li>
                     <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">User</li>
-                    <li class="breadcrumb-item active" aria-current="page">Edit User</li>
+                    <li class="breadcrumb-item active"><a href="{{ route('user.list') }}">User</a></li>
+                    <li class="br eadcrumb-item active"><a href="{{ route('user.create') }}">Tambah Data</a></li>
                 </ol>
             </nav>
             <h2 class="h4">Data User</h2>
             <p class="mb-0">List Seluruh Data User</p>
         </div>
         <div class="d-flex justify-content-center align-items-center gap-3">
-            <a href="{{route('user.list')}}"
+            <a href="{{ route('user.list') }}"
                 class="btn btn-dark text-white d-inline-flex align-items-center justify-content-center px-3 py-2"
                 style="gap: 0.75rem; font-size: 1rem;">
                 Kembali
             </a>
         </div>
     </div>
+    <div class="card-body">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+    </div>
     <div class="card card-body border-0 shadow mb-4">
         <h2 class="h5 mb-4">Edit Data User</h2>
         <form action="{{ route('user.update') }}" method="POST">
             @csrf
-            <div class="card-body">
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-            </div>
+
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <div>
@@ -69,7 +70,7 @@
                     <div class="form-group">
                         <label for="password">Password</label>
                         <input class="form-control" id="password" type="password" name="password" placeholder="password"
-                            value="{{ $dataUser->password }}">
+                            value="">
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
@@ -81,6 +82,7 @@
                     </select>
                 </div>
             </div>
+            <input type="hidden" name="id" value="{{ $dataUser->id }}">
             <div class="mt-3">
                 <button class="btn btn-success text-white mt-2 animate-up-2" type="submit">Simpan</button>
             </div>

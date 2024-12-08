@@ -26,7 +26,7 @@
             <p class="mb-0">List Seluruh Data Siswa</p>
         </div>
         <div class="d-flex justify-content-center align-items-center gap-3">
-            <a href="{{route('siswa.list')}}"
+            <a href="{{ route('siswa.list') }}"
                 class="btn btn-dark text-white d-inline-flex align-items-center justify-content-center px-3 py-2"
                 style="gap: 0.75rem; font-size: 1rem;">
                 Kembali
@@ -52,15 +52,15 @@
                 <div class="col-md-6 mb-3">
                     <div>
                         <label for="name">Nama</label>
-                        <input class="form-control" id="name" type="text" name="name"
-                            placeholder="Ketik Nama" value="{{ $dataSiswa->name }}">
+                        <input class="form-control" id="name" type="text" name="name" placeholder="Ketik Nama"
+                            value="{{ $dataSiswa->name }}">
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
                     <div>
                         <label for="phone">No HP</label>
-                        <input class="form-control" id="phone" type="number" name="phone"
-                            placeholder="08**********" value="{{ $dataSiswa->phone }}">
+                        <input class="form-control" id="phone" type="number" name="phone" placeholder="08**********"
+                            value="{{ $dataSiswa->phone }}">
                     </div>
                 </div>
             </div>
@@ -74,38 +74,44 @@
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="kelas">Kelas</label>
-                    <select class="form-select mb-0" id="kelas" name="kelas" value="{{ $dataSiswa->kelas }}"
-                        aria-label="kelas select example">
-                        <option selected>Pilih Kelas</option>
-                        <option value="12">12</option>
-                        <option value="11">11</option>
-                        <option value="10">10</option>
-                        <option value="9">9</option>
-                        <option value="8">8</option>
-                        <option value="7">7</option>
-                        <option value="6">6</option>
-                        <option value="5">5</option>
-                        <option value="4">4</option>
-                        <option value="3">3</option>
+                    <select class="form-select mb-0" id="kelas" name="kelas" aria-label="kelas select example">
+                        <option value="" disabled>Pilih Kelas</option>
+                        <option value="12" {{ $dataSiswa->kelas == '12' ? 'selected' : '' }}>12</option>
+                        <option value="11" {{ $dataSiswa->kelas == '11' ? 'selected' : '' }}>11</option>
+                        <option value="10" {{ $dataSiswa->kelas == '10' ? 'selected' : '' }}>10</option>
+                        <option value="9" {{ $dataSiswa->kelas == '9' ? 'selected' : '' }}>9</option>
+                        <option value="8" {{ $dataSiswa->kelas == '8' ? 'selected' : '' }}>8</option>
+                        <option value="7" {{ $dataSiswa->kelas == '7' ? 'selected' : '' }}>7</option>
+                        <option value="6" {{ $dataSiswa->kelas == '6' ? 'selected' : '' }}>6</option>
+                        <option value="5" {{ $dataSiswa->kelas == '5' ? 'selected' : '' }}>5</option>
+                        <option value="4" {{ $dataSiswa->kelas == '4' ? 'selected' : '' }}>4</option>
+                        <option value="3" {{ $dataSiswa->kelas == '3' ? 'selected' : '' }}>3</option>
                     </select>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label for="mataPelajaran">Mata Pelajaran</label>
-                    <select class="form-select mb-0" id="mataPelajaran" name="mataPelajaran" value="{{ $dataSiswa->mataPelajaran }}"
+                    <select class="form-select mb-0" id="mataPelajaran" name="mataPelajaran"
                         aria-label="mataPelajaran select example">
-                        <option selected>Pilih Mata Pelajaran</option>
-                        <option value="Matematika">Matematika</option>
-                        <option value="Fisika">Fisika</option>
-                        <option value="Biologi">Biologi</option>
-                        <option value="Kimia">Kimia</option>
-                        <option value="IPA">IPA</option>
-                        <option value="IPS">IPS</option>
-                        <option value="PKN">PKN</option>
-                        <option value="Agama Islam">Agama Islam</option>
-                        <option value="Bahasa Indonesia">Bahasa Indonesia</option>
-                        <option value="Bahasa Inggris">Bahasa Inggris</option>
+                        <option value="" disabled>Pilih Mata Pelajaran</option>
+                        <option value="Matematika" {{ $dataSiswa->mataPelajaran == 'Matematika' ? 'selected' : '' }}>
+                            Matematika</option>
+                        <option value="Fisika" {{ $dataSiswa->mataPelajaran == 'Fisika' ? 'selected' : '' }}>Fisika
+                        </option>
+                        <option value="Biologi" {{ $dataSiswa->mataPelajaran == 'Biologi' ? 'selected' : '' }}>Biologi
+                        </option>
+                        <option value="Kimia" {{ $dataSiswa->mataPelajaran == 'Kimia' ? 'selected' : '' }}>Kimia</option>
+                        <option value="IPA" {{ $dataSiswa->mataPelajaran == 'IPA' ? 'selected' : '' }}>IPA</option>
+                        <option value="IPS" {{ $dataSiswa->mataPelajaran == 'IPS' ? 'selected' : '' }}>IPS</option>
+                        <option value="PKN" {{ $dataSiswa->mataPelajaran == 'PKN' ? 'selected' : '' }}>PKN</option>
+                        <option value="Agama Islam" {{ $dataSiswa->mataPelajaran == 'Agama Islam' ? 'selected' : '' }}>
+                            Agama Islam</option>
+                        <option value="Bahasa Indonesia"
+                            {{ $dataSiswa->mataPelajaran == 'Bahasa Indonesia' ? 'selected' : '' }}>Bahasa Indonesia
+                        </option>
+                        <option value="Bahasa Inggris"
+                            {{ $dataSiswa->mataPelajaran == 'Bahasa Inggris' ? 'selected' : '' }}>Bahasa Inggris</option>
                     </select>
                 </div>
                 <div class="col-md-6 mb-3">
@@ -133,7 +139,9 @@
                     </div>
                 </div>
             </div>
+            <input type="hidden" name="id" value="{{ $dataSiswa->id }}">
             <div class="mt-3">
+                <input type="hidden" name="id" value="{{ $dataSiswa->id }}">
                 <button class="btn btn-success text-white mt-2 animate-up-2" type="submit">Simpan</button>
             </div>
         </form>

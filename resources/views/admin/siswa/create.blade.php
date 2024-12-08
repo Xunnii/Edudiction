@@ -26,7 +26,7 @@
             <p class="mb-0">List Seluruh Data Siswa</p>
         </div>
         <div class="d-flex justify-content-center align-items-center gap-3">
-            <a href="{{route('siswa.list')}}"
+            <a href="{{ route('siswa.list') }}"
                 class="btn btn-dark text-white d-inline-flex align-items-center justify-content-center px-3 py-2"
                 style="gap: 0.75rem; font-size: 1rem;">
                 Kembali
@@ -52,15 +52,15 @@
                 <div class="col-md-6 mb-3">
                     <div>
                         <label for="name">Nama</label>
-                        <input class="form-control" id="name" type="text" name="name"
-                            placeholder="Ketik Nama" value="">
+                        <input class="form-control" id="name" type="text" name="name" placeholder="Ketik Nama"
+                            value="">
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
                     <div>
                         <label for="phone">No HP</label>
-                        <input class="form-control" id="phone" type="number" name="phone"
-                            placeholder="08**********" value="">
+                        <input class="form-control" id="phone" type="number" name="phone" placeholder="08**********"
+                            value="">
                     </div>
                 </div>
             </div>
@@ -128,8 +128,7 @@
                 <div class="col-md-6 mb-3">
                     <div class="form-group">
                         <label for="pukul">Pukul</label>
-                        <input class="form-control" id="pukul" type="time" name="pukul"
-                            value="">
+                        <input class="form-control" id="pukul" type="time" name="pukul" value="">
                     </div>
                 </div>
             </div>

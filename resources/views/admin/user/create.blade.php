@@ -1,6 +1,6 @@
 @extends('layouts.admin.app')
 
-@section('title', 'Sample Page')
+@section('title', 'User Buat')
 
 @section('content')
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
@@ -26,7 +26,7 @@
             <p class="mb-0">List Seluruh Data User</p>
         </div>
         <div class="d-flex justify-content-center align-items-center gap-3">
-            <a href="{{route('user.list')}}"
+            <a href="{{ route('user.list') }}"
                 class="btn btn-dark text-white d-inline-flex align-items-center justify-content-center px-3 py-2"
                 style="gap: 0.75rem; font-size: 1rem;">
                 Kembali
@@ -34,6 +34,9 @@
         </div>
     </div>
     <div class="card card-body border-0 shadow mb-1">
+
+
+
         <h2 class="h5 mb-1">Tambahkan Data User</h2>
         <form action="{{ route('user.store') }}" method="POST">
             @csrf
@@ -76,8 +79,8 @@
                     <label for="role">Role</label>
                     <select class="form-select mb-0" id="role" name="role" value=""
                         aria-label="Gender select example">
-                        <option value="Guru">Guru</option>
-                        <option value="Pelanggan">Pelanggan</option>
+                        <option value="Guru"{{ old('role') == 'Guru' ? 'selected' : '' }}>Guru</option>
+                        <option value="Pelanggan" {{ old('role') == 'Pelanggan' ? 'selected' : '' }}>Pelanggan</option>
                     </select>
                 </div>
             </div>
